@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Voyara | Packages</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">Voyara</div>
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="destinations.html">Destinations</a></li>
+<li><a href="hotels.html">Hotels</a></li>
+<li><a href="packages.html">Packages</a></li>
+<li><a href="booking.html">Booking</a></li>
+<li><a href="payment-history.html">Payment History</a></li>
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+
+<h1 class="page-title">
+Travel Packages
+</h1>
+
+
+
+<section class="card-container">
+
+
+
+<div class="card">
+
+<img src="images/packages/adventure.jpg">
+
+<h3>Adventure Package</h3>
+
+<p>
+Trekking, rafting and exciting outdoor adventures.
+</p>
+
+<button class="btn" onclick="bookPackage('Adventure Package')">
+Book Now
+</button>
+
+</div>
+
+
+
+
+<div class="card">
+
+<img src="images/packages/beach.jpg">
+
+<h3>Beach Holiday</h3>
+
+<p>
+Relax on beautiful beaches and enjoy ocean views.
+</p>
+
+<button class="btn" onclick="bookPackage('Beach Holiday')">
+Book Now
+</button>
+
+</div>
+
+
+
+
+<div class="card">
+
+<img src="images/packages/city.jpg">
+
+<h3>City Explorer</h3>
+
+<p>
+Explore famous cities, landmarks and local culture.
+</p>
+
+<button class="btn" onclick="bookPackage('City Explorer')">
+Book Now
+</button>
+
+</div>
+
+
+
+
+<div class="card">
+
+<img src="images/packages/family.jpg">
+
+<h3>Family Vacation</h3>
+
+<p>
+Enjoy comfortable trips with your loved ones.
+</p>
+
+<button class="btn" onclick="bookPackage('Family Vacation')">
+Book Now
+</button>
+
+</div>
+
+
+
+
+<div class="card">
+
+<img src="images/packages/heritage.jpg">
+
+<h3>Heritage Tour</h3>
+
+<p>
+Discover historical places and royal heritage.
+</p>
+
+<button class="btn" onclick="bookPackage('Heritage Tour')">
+Book Now
+</button>
+
+</div>
+
+
+
+
+<div class="card">
+
+<img src="images/packages/nature.jpg">
+
+<h3>Nature Escape</h3>
+
+<p>
+Enjoy mountains, forests and peaceful landscapes.
+</p>
+
+<button class="btn" onclick="bookPackage('Nature Escape')">
+Book Now
+</button>
+
+</div>
+
+
+
+
+<div class="card">
+
+<img src="images/packages/solo.avif">
+
+<h3>Solo Traveller</h3>
+
+<p>
+Explore new destinations independently.
+</p>
+
+<button class="btn" onclick="bookPackage('Solo Traveller')">
+Book Now
+</button>
+
+</div>
+
+
+
+
+<div class="card">
+
+<img src="images/packages/wildlife.jpg">
+
+<h3>Wildlife Adventure</h3>
+
+<p>
+Experience wildlife and nature safaris.
+</p>
+
+<button class="btn" onclick="bookPackage('Wildlife Adventure')">
+Book Now
+</button>
+
+</div>
+
+
+
+</section>
+
+
+
+
+<footer>
+
+<p>
+© 2026 Voyara. All Rights Reserved.
+</p>
+
+</footer>
+
+
+
+
+<script>
+
+function bookPackage(packageName){
+
+localStorage.setItem("package", packageName);
+
+window.location.href="booking.html";
+
+}
+
+</script>
+
+
+
+</body>
+
+</html>

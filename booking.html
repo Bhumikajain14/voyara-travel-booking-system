@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Voyara | Travel Booking</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">Voyara</div>
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="destinations.html">Destinations</a></li>
+<li><a href="hotels.html">Hotels</a></li>
+<li><a href="packages.html">Packages</a></li>
+<li><a href="booking.html">Booking</a></li>
+<li><a href="payment-history.html">Payment History</a></li>
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+
+<h1 class="page-title">
+Travel Booking System
+</h1>
+
+
+
+<div class="form-container">
+
+
+<form id="bookingForm">
+
+
+<input 
+type="text"
+id="name"
+placeholder="Full Name"
+required>
+
+
+
+<input 
+type="email"
+id="email"
+placeholder="Email Address"
+required>
+
+
+
+<input 
+type="tel"
+id="phone"
+placeholder="Phone Number"
+required>
+
+
+
+
+<select id="destination" required>
+
+<option value="">
+Select Destination
+</option>
+
+<option>Agra</option>
+<option>Bali</option>
+<option>Bangalore</option>
+<option>Bangkok</option>
+<option>Barcelona</option>
+<option>Delhi</option>
+<option>Dubai</option>
+<option>Goa</option>
+<option>Istanbul</option>
+<option>Jaipur</option>
+<option>Kashmir</option>
+<option>Kerala</option>
+<option>Ladakh</option>
+<option>London</option>
+<option>Maldives</option>
+<option>Manali</option>
+<option>Mumbai</option>
+<option>Mussoorie</option>
+<option>New York</option>
+<option>Paris</option>
+<option>Rishikesh</option>
+<option>Rome</option>
+<option>Seoul</option>
+<option>Sydney</option>
+<option>Singapore</option>
+<option>Switzerland</option>
+<option>Tokyo</option>
+<option>Udaipur</option>
+<option>Varanasi</option>
+
+</select>
+
+
+
+
+<input 
+type="date"
+id="date"
+required>
+
+
+
+<input 
+type="number"
+id="travellers"
+placeholder="Number of Travellers"
+required>
+
+
+
+
+<button type="submit">
+Continue
+</button>
+
+
+</form>
+
+
+</div>
+
+
+
+<footer>
+
+<p>
+© 2026 Voyara. All Rights Reserved.
+</p>
+
+</footer>
+
+
+
+
+<script>
+
+
+// If user came from destination page
+
+let selectedDestination =
+localStorage.getItem("destination");
+
+
+if(selectedDestination){
+
+document.getElementById("destination").value =
+selectedDestination;
+
+}
+
+
+
+
+document.getElementById("bookingForm")
+.addEventListener("submit",function(e){
+
+
+e.preventDefault();
+
+
+
+localStorage.setItem(
+"name",
+document.getElementById("name").value
+);
+
+
+
+localStorage.setItem(
+"email",
+document.getElementById("email").value
+);
+
+
+
+localStorage.setItem(
+"phone",
+document.getElementById("phone").value
+);
+
+
+
+localStorage.setItem(
+"destination",
+document.getElementById("destination").value
+);
+
+
+
+localStorage.setItem(
+"date",
+document.getElementById("date").value
+);
+
+
+
+localStorage.setItem(
+"travellers",
+document.getElementById("travellers").value
+);
+
+
+
+window.location.href="hotel-selection.html";
+
+
+});
+
+
+</script>
+
+
+
+</body>
+
+</html>

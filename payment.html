@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Voyara | Payment</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">Voyara</div>
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="destinations.html">Destinations</a></li>
+<li><a href="packages.html">Packages</a></li>
+<li><a href="booking.html">Booking</a></li>
+<li><a href="payment-history.html">Payment History</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+
+<h1 class="page-title">
+Payment
+</h1>
+
+
+
+<div class="form-container">
+
+
+<h2>
+Amount Payable: ₹<span id="amount"></span>
+</h2>
+
+
+<form id="paymentForm">
+
+
+<select required>
+
+<option value="">
+Select Payment Method
+</option>
+
+<option>UPI</option>
+
+<option>Credit Card</option>
+
+<option>Debit Card</option>
+
+<option>Net Banking</option>
+
+</select>
+
+
+
+<input type="text" placeholder="Transaction ID" required>
+
+
+<button type="submit">
+Pay Now
+</button>
+
+
+</form>
+
+
+</div>
+
+
+
+
+<div id="success" class="form-container" style="display:none;">
+
+
+<h2>
+Payment Successful 🎉
+</h2>
+
+
+<p>
+Your Voyara trip has been booked successfully.
+</p>
+
+
+<a href="payment-history.html" class="btn">
+View Payment History
+</a>
+
+
+</div>
+
+
+
+
+<footer>
+
+<p>
+© 2026 Voyara. All Rights Reserved.
+</p>
+
+</footer>
+
+
+
+
+<script>
+
+
+let total = localStorage.getItem("totalAmount");
+
+
+if(total){
+
+document.getElementById("amount").innerHTML = total;
+
+}
+
+
+
+document.getElementById("paymentForm").addEventListener("submit",function(e){
+
+e.preventDefault();
+
+
+localStorage.setItem(
+"paymentStatus",
+"Paid"
+);
+
+
+localStorage.setItem(
+"bookingID",
+"VY" + Math.floor(Math.random()*10000)
+);
+
+
+
+this.style.display="none";
+
+
+document.getElementById("success").style.display="block";
+
+window.location.href="booking-success.html";
+
+
+});
+
+
+</script>
+
+
+
+</body>
+
+</html>
