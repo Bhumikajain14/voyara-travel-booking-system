@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Voyara | Booking Successful</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">Voyara</div>
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="destinations.html">Destinations</a></li>
+<li><a href="packages.html">Packages</a></li>
+<li><a href="booking.html">Booking</a></li>
+<li><a href="payment-history.html">History</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+
+<h1 class="page-title">
+Booking Successful 🎉
+</h1>
+
+
+
+<div class="form-container">
+
+
+<h2>
+Thank You For Choosing Voyara!
+</h2>
+
+
+<p>
+Your trip has been booked successfully.
+</p>
+
+
+<br>
+
+
+<p>
+<strong>Booking ID:</strong>
+<span id="bookingID"></span>
+</p>
+
+
+<p>
+<strong>Name:</strong>
+<span id="name"></span>
+</p>
+
+
+<p>
+<strong>Package:</strong>
+<span id="package"></span>
+</p>
+
+
+<p>
+<strong>Destination:</strong>
+<span id="destination"></span>
+</p>
+
+
+<p>
+<strong>Hotel:</strong>
+<span id="hotel"></span>
+</p>
+
+
+<p>
+<strong>Travel Mode:</strong>
+<span id="transport"></span>
+</p>
+
+
+<p>
+<strong>Total Amount:</strong>
+₹<span id="amount"></span>
+</p>
+
+
+<br>
+
+
+<a href="payment-history.html" class="btn">
+View Booking History
+</a>
+
+
+</div>
+
+
+
+
+<footer>
+
+<p>
+© 2026 Voyara. All Rights Reserved.
+</p>
+
+</footer>
+
+
+
+
+<script>
+
+
+document.getElementById("bookingID").innerHTML =
+localStorage.getItem("bookingID");
+
+
+document.getElementById("name").innerHTML =
+localStorage.getItem("name");
+
+
+document.getElementById("package").innerHTML =
+localStorage.getItem("package") || "Not Selected";
+
+
+document.getElementById("destination").innerHTML =
+localStorage.getItem("destination");
+
+
+document.getElementById("hotel").innerHTML =
+localStorage.getItem("hotel");
+
+
+document.getElementById("transport").innerHTML =
+localStorage.getItem("transport");
+
+
+document.getElementById("amount").innerHTML =
+localStorage.getItem("totalAmount");
+
+
+</script>
+
+
+
+</body>
+
+</html>

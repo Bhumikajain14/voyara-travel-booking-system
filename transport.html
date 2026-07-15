@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Voyara | Travel Mode</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">Voyara</div>
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="destinations.html">Destinations</a></li>
+<li><a href="packages.html">Packages</a></li>
+<li><a href="booking.html">Booking</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+
+<h1 class="page-title">
+Select Travelling Mode
+</h1>
+
+
+
+<div class="form-container">
+
+
+<form id="travelForm">
+
+
+<select id="vehicle" required>
+
+<option value="">
+Select Vehicle
+</option>
+
+<option value="Train">
+🚆 Train
+</option>
+
+<option value="Bus">
+🚌 Bus
+</option>
+
+<option value="Airplane">
+✈️ Airplane
+</option>
+
+<option value="Ship">
+🚢 Ship
+</option>
+
+</select>
+
+
+
+<select id="time" required>
+
+<option value="">
+Select Departure Time
+</option>
+
+</select>
+
+
+
+<p id="arrival">
+Expected Arrival Time:
+</p>
+
+
+
+<p id="price">
+Ticket Price:
+</p>
+
+
+
+<button type="submit">
+Continue
+</button>
+
+
+</form>
+
+
+</div>
+
+
+
+
+<footer>
+
+<p>
+© 2026 Voyara. All Rights Reserved.
+</p>
+
+</footer>
+
+
+
+
+<script>
+
+
+let vehicle =
+document.getElementById("vehicle");
+
+
+let time =
+document.getElementById("time");
+
+
+let arrival =
+document.getElementById("arrival");
+
+
+let price =
+document.getElementById("price");
+
+
+
+
+let travelData = {
+
+
+"Train":{
+
+times:["06:00 AM","02:00 PM","10:00 PM"],
+
+arrival:["10:00 AM","06:00 PM","02:00 AM"],
+
+price:1500
+
+},
+
+
+
+"Bus":{
+
+times:["07:00 AM","05:00 PM","11:00 PM"],
+
+arrival:["01:00 PM","11:00 PM","05:00 AM"],
+
+price:800
+
+},
+
+
+
+"Airplane":{
+
+times:["08:00 AM","03:00 PM","09:00 PM"],
+
+arrival:["10:30 AM","05:30 PM","11:30 PM"],
+
+price:5000
+
+},
+
+
+
+"Ship":{
+
+times:["09:00 AM","04:00 PM","08:00 PM"],
+
+arrival:["05:00 PM","12:00 AM","04:00 AM"],
+
+price:7000
+
+}
+
+
+};
+
+
+
+
+
+vehicle.addEventListener("change",function(){
+
+
+time.innerHTML =
+'<option value="">Select Departure Time</option>';
+
+
+
+let selected =
+travelData[this.value];
+
+
+
+selected.times.forEach(function(t){
+
+let option =
+document.createElement("option");
+
+option.value=t;
+
+option.text=t;
+
+time.appendChild(option);
+
+});
+
+
+price.innerHTML =
+"Ticket Price: ₹" + selected.price;
+
+
+});
+
+
+
+
+
+time.addEventListener("change",function(){
+
+
+let selected =
+travelData[vehicle.value];
+
+
+let index =
+selected.times.indexOf(this.value);
+
+
+
+arrival.innerHTML =
+"Expected Arrival Time: "
++
+selected.arrival[index];
+
+
+});
+
+
+
+
+
+document.getElementById("travelForm")
+.addEventListener("submit",function(e){
+
+
+e.preventDefault();
+
+
+
+localStorage.setItem(
+"transport",
+vehicle.value
+);
+
+
+
+localStorage.setItem(
+"travelTime",
+time.value
+);
+
+
+
+localStorage.setItem(
+"ticketPrice",
+travelData[vehicle.value].price
+);
+
+
+
+window.location.href="booking-summary.html";
+
+
+});
+
+
+</script>
+
+
+
+</body>
+
+</html>

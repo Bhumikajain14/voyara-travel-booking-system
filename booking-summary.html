@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Voyara | Booking Summary</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">Voyara</div>
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="destinations.html">Destinations</a></li>
+<li><a href="packages.html">Packages</a></li>
+<li><a href="booking.html">Booking</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+
+<h1 class="page-title">
+Booking Summary
+</h1>
+
+
+
+<div class="form-container">
+
+
+<h2>Your Trip Details</h2>
+
+
+<p>
+<strong>Name:</strong>
+<span id="name"></span>
+</p>
+
+
+<p>
+<strong>Email:</strong>
+<span id="email"></span>
+</p>
+
+
+<p>
+<strong>Phone:</strong>
+<span id="phone"></span>
+</p>
+
+
+<p>
+<strong>Destination:</strong>
+<span id="destination"></span>
+</p>
+
+
+<p>
+<strong>Travel Date:</strong>
+<span id="date"></span>
+</p>
+
+
+<p>
+<strong>Number of Travellers:</strong>
+<span id="travellers"></span>
+</p>
+
+
+<p>
+<strong>Hotel:</strong>
+<span id="hotel"></span>
+</p>
+
+
+<p>
+<strong>Hotel Price:</strong>
+₹<span id="hotelPrice"></span>
+</p>
+
+
+<p>
+<strong>Travel Mode:</strong>
+<span id="transport"></span>
+</p>
+
+
+<p>
+<strong>Ticket Price:</strong>
+₹<span id="transportPrice"></span>
+</p>
+
+
+<hr>
+
+
+<h2>
+Total Amount: ₹<span id="total"></span>
+</h2>
+
+
+<br>
+
+
+<a href="payment.html" class="btn">
+Proceed to Payment
+</a>
+
+
+
+</div>
+
+
+
+<footer>
+
+<p>
+© 2026 Voyara. All Rights Reserved.
+</p>
+
+</footer>
+
+
+
+
+<script>
+
+
+let hotelPrice = Number(localStorage.getItem("hotelPrice"));
+
+let transportPrice = Number(localStorage.getItem("transportPrice"));
+
+
+document.getElementById("name").innerHTML =
+localStorage.getItem("name");
+
+
+document.getElementById("email").innerHTML =
+localStorage.getItem("email");
+
+
+document.getElementById("phone").innerHTML =
+localStorage.getItem("phone");
+
+
+document.getElementById("destination").innerHTML =
+localStorage.getItem("destination");
+
+
+document.getElementById("date").innerHTML =
+localStorage.getItem("date");
+
+
+document.getElementById("travellers").innerHTML =
+localStorage.getItem("travellers");
+
+
+document.getElementById("hotel").innerHTML =
+localStorage.getItem("hotel");
+
+
+document.getElementById("hotelPrice").innerHTML =
+hotelPrice;
+
+
+document.getElementById("transport").innerHTML =
+localStorage.getItem("transport");
+
+
+document.getElementById("transportPrice").innerHTML =
+transportPrice;
+
+
+
+let total = hotelPrice + transportPrice;
+
+
+document.getElementById("total").innerHTML = total;
+
+localStorage.setItem("totalAmount", total);
+
+</script>
+
+
+
+</body>
+
+</html>

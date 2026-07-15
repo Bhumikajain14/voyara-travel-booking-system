@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Voyara | Choose Hotel</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">Voyara</div>
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="destinations.html">Destinations</a></li>
+<li><a href="packages.html">Packages</a></li>
+<li><a href="booking.html">Booking</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+
+<h1 class="page-title">
+Choose Your Hotel
+</h1>
+
+
+
+<section class="card-container" id="hotelContainer">
+
+</section>
+
+
+
+<footer>
+
+<p>
+© 2026 Voyara. All Rights Reserved.
+</p>
+
+</footer>
+
+
+
+<script>
+
+
+let destination =
+localStorage.getItem("destination");
+
+
+
+let hotels = {
+
+
+"Agra":[
+
+["Agra Comfort Inn","Budget","3000","images/hotels/eden.jpg"],
+
+["Mughal Grand Hotel","Premium","7000","images/hotels/taj_palace.jpg"],
+
+["Taj Heritage Palace","Luxury","16000","images/hotels/taj_palace.jpg"]
+
+],
+
+
+
+"Goa":[
+
+["Beach View Resort","Budget","4000","images/hotels/eden.jpg"],
+
+["Goa Grand Hotel","Premium","8000","images/hotels/taj_palace.jpg"],
+
+["Taj Goa Palace","Luxury","18000","images/hotels/taj_palace.jpg"]
+
+],
+
+
+
+"Jaipur":[
+
+["Pink City Resort","Budget","3500","images/hotels/eden.jpg"],
+
+["Royal Jaipur Hotel","Premium","9000","images/hotels/rambagh_palace.jpg"],
+
+["Rambagh Palace","Luxury","25000","images/hotels/rambagh_palace.jpg"]
+
+],
+
+
+
+"Manali":[
+
+["Mountain Stay Resort","Budget","3000","images/hotels/the_himalayan.jpg"],
+
+["Snow Valley Hotel","Premium","8000","images/hotels/jw_marrott_mussoorie.jpg"],
+
+["The Himalayan Resort","Luxury","20000","images/hotels/the_himalayan.jpg"]
+
+],
+
+
+
+"Kashmir":[
+
+["Valley View Hotel","Budget","4000","images/hotels/lalit_kashmir.jpg"],
+
+["Kashmir Grand Resort","Premium","9000","images/hotels/lalit_kashmir.jpg"],
+
+["Lalit Palace Kashmir","Luxury","22000","images/hotels/lalit_kashmir.jpg"]
+
+],
+
+
+
+"Bali":[
+
+["Bali Beach Resort","Budget","5000","images/hotels/ayana_bali.jpg"],
+
+["Tropical Grand Bali","Premium","12000","images/hotels/ayana_bali.jpg"],
+
+["Ayana Bali Resort","Luxury","30000","images/hotels/ayana_bali.jpg"]
+
+],
+
+"Dubai":[
+
+["Dubai Comfort Hotel","Budget","7000","images/hotels/burj_ai_arab.jpg"],
+
+["Burj View Hotel","Premium","18000","images/hotels/burj_ai_arab.jpg"],
+
+["Burj Al Arab","Luxury","60000","images/hotels/burj_ai_arab.jpg"]
+
+],
+
+
+
+"Kerala":[
+
+["Kerala Nature Stay","Budget","4000","images/hotels/spicetree_munnar.jpg"],
+
+["Backwater Grand Resort","Premium","10000","images/hotels/spicetree_munnar.jpg"],
+
+["The Leela Kerala","Luxury","25000","images/hotels/leela_palace_bangaluru.jpg"]
+
+],
+
+
+
+"Ladakh":[
+
+["Mountain Camp Stay","Budget","3500","images/hotels/grand_dragon_ladakh.jpg"],
+
+["Ladakh Grand Hotel","Premium","8000","images/hotels/grand_dragon_ladakh.jpg"],
+
+["Grand Dragon Ladakh","Luxury","20000","images/hotels/grand_dragon_ladakh.jpg"]
+
+],
+
+
+
+"London":[
+
+["London City Inn","Budget","8000","images/hotels/savoy_london.jpg"],
+
+["Royal London Hotel","Premium","18000","images/hotels/savoy_london.jpg"],
+
+["The Savoy London","Luxury","50000","images/hotels/savoy_london.jpg"]
+
+],
+
+
+
+"Maldives":[
+
+["Island View Resort","Budget","12000","images/hotels/conrad_maldives.jpg"],
+
+["Ocean Premium Resort","Premium","25000","images/hotels/conrad_maldives.jpg"],
+
+["Conrad Maldives","Luxury","70000","images/hotels/conrad_maldives.jpg"]
+
+],
+
+
+
+"Mumbai":[
+
+["Mumbai Comfort Stay","Budget","5000","images/hotels/taj_palace.jpg"],
+
+["Marine Grand Hotel","Premium","12000","images/hotels/taj_palace.jpg"],
+
+["Taj Palace Mumbai","Luxury","30000","images/hotels/taj_palace.jpg"]
+
+],
+
+
+
+"Mussoorie":[
+
+["Hill View Resort","Budget","3500","images/hotels/jw_marrott_mussoorie.jpg"],
+
+["Mountain Grand Hotel","Premium","9000","images/hotels/jw_marrott_mussoorie.jpg"],
+
+["JW Marriott Mussoorie","Luxury","30000","images/hotels/jw_marrott_mussoorie.jpg"]
+
+],
+
+
+
+"Paris":[
+
+["Paris City Hotel","Budget","9000","images/hotels/ritz_paris.jpg"],
+
+["Eiffel Grand Hotel","Premium","20000","images/hotels/ritz_paris.jpg"],
+
+["Ritz Paris","Luxury","60000","images/hotels/ritz_paris.jpg"]
+
+],
+
+
+
+"Singapore":[
+
+["Singapore Inn","Budget","8000","images/hotels/marina_bay.jpg"],
+
+["Marina Bay Hotel","Premium","18000","images/hotels/marina_bay.jpg"],
+
+["Marina Bay Sands","Luxury","45000","images/hotels/marina_bay.jpg"]
+
+],
+
+
+
+"Tokyo":[
+
+["Tokyo Stay Hotel","Budget","7000","images/hotels/mandarin.jpg"],
+
+["Tokyo Grand Hotel","Premium","15000","images/hotels/mandarin.jpg"],
+
+["Tokyo Luxury Palace","Luxury","40000","images/hotels/mandarin.jpg"]
+
+],
+
+"Udaipur":[
+
+["Lake View Resort","Budget","5000","images/hotels/oberoi_udaivilas.jpg"],
+
+["Royal Udaipur Hotel","Premium","12000","images/hotels/oberoi_udaivilas.jpg"],
+
+["Oberoi Udaivilas","Luxury","35000","images/hotels/oberoi_udaivilas.jpg"]
+
+],
+
+
+
+"Varanasi":[
+
+["Ganga View Hotel","Budget","3000","images/hotels/taj_palace.jpg"],
+
+["Heritage Varanasi Hotel","Premium","8000","images/hotels/taj_palace.jpg"],
+
+["Luxury Palace Varanasi","Luxury","18000","images/hotels/taj_palace.jpg"]
+
+],
+
+
+
+"Bangkok":[
+
+["Bangkok Stay Inn","Budget","4000","images/hotels/mandarin.jpg"],
+
+["Thai Grand Hotel","Premium","9000","images/hotels/mandarin.jpg"],
+
+["Mandarin Oriental Bangkok","Luxury","30000","images/hotels/mandarin.jpg"]
+
+],
+
+
+
+"Banglore":[
+
+["Bangalore Comfort Hotel","Budget","4000","images/hotels/leela_delhi.jpg"],
+
+["Garden City Hotel","Premium","10000","images/hotels/leela_palace_bangaluru.jpg"],
+
+["Leela Palace Bangalore","Luxury","25000","images/hotels/leela_palace_bangaluru.jpg"]
+
+],
+
+
+
+"Barcelona":[
+
+["Barcelona City Inn","Budget","7000","images/hotels/w_barcelona.jpg"],
+
+["Spain Grand Hotel","Premium","15000","images/hotels/w_barcelona.jpg"],
+
+["W Barcelona","Luxury","35000","images/hotels/w_barcelona.jpg"]
+
+],
+
+
+
+"Delhi":[
+
+["Delhi Comfort Stay","Budget","4000","images/hotels/leela_delhi.jpg"],
+
+["Delhi Grand Hotel","Premium","10000","images/hotels/leela_delhi.jpg"],
+
+["Leela Palace Delhi","Luxury","28000","images/hotels/leela_delhi.jpg"]
+
+],
+
+
+
+"Istanbul":[
+
+["Istanbul City Hotel","Budget","5000","images/hotels/ciragan.jpg"],
+
+["Bosphorus Grand Hotel","Premium","12000","images/hotels/ciragan.jpg"],
+
+["Ciragan Palace","Luxury","40000","images/hotels/ciragan.jpg"]
+
+]
+
+};
+
+
+
+let container =
+document.getElementById("hotelContainer");
+
+
+
+if(hotels[destination]){
+
+
+hotels[destination].forEach(function(hotel){
+
+
+container.innerHTML += `
+
+
+<div class="card">
+
+
+<img src="${hotel[3]}"
+alt="${hotel[0]}"
+style="width:100%;height:220px;object-fit:cover;">
+
+
+
+<h3>
+${hotel[0]}
+</h3>
+
+
+
+<p>
+Category: ${hotel[1]}
+</p>
+
+
+
+<p>
+Price: ₹${hotel[2]} / night
+</p>
+
+
+
+<button class="btn"
+onclick="selectHotel('${hotel[0]}','${hotel[2]}')">
+
+Choose Hotel
+
+</button>
+
+
+</div>
+
+
+`;
+
+
+});
+
+
+}
+
+else{
+
+
+container.innerHTML=
+"<h2>No hotels available for this destination</h2>";
+
+}
+
+
+
+
+function selectHotel(name,price){
+
+
+localStorage.setItem("hotel",name);
+
+
+localStorage.setItem("hotelPrice",price);
+
+
+
+window.location.href="transport.html";
+
+
+}
+
+
+</script>
+
+
+
+</body>
+
+</html>

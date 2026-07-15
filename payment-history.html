@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Voyara | Payment History</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<nav class="navbar">
+
+<div class="logo">Voyara</div>
+
+<ul class="nav-links">
+
+<li><a href="index.html">Home</a></li>
+<li><a href="destinations.html">Destinations</a></li>
+<li><a href="packages.html">Packages</a></li>
+<li><a href="booking.html">Booking</a></li>
+<li><a href="payment-history.html">Payment History</a></li>
+<li><a href="contact.html">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+
+
+<h1 class="page-title">
+Payment History
+</h1>
+
+
+
+<div class="table-container">
+
+
+<table>
+
+
+<tr>
+
+<th>Booking ID</th>
+<th>Name</th>
+<th>Destination</th>
+<th>Hotel</th>
+<th>Transport</th>
+<th>Amount</th>
+<th>Status</th>
+
+</tr>
+
+
+
+<tr>
+
+<td id="bookingID"></td>
+
+<td id="name"></td>
+
+<td id="destination"></td>
+
+<td id="hotel"></td>
+
+<td id="transport"></td>
+
+<td>₹<span id="amount"></span></td>
+
+<td id="status"></td>
+
+</tr>
+
+
+</table>
+
+
+</div>
+
+
+
+
+<footer>
+
+<p>
+© 2026 Voyara. All Rights Reserved.
+</p>
+
+</footer>
+
+
+
+
+<script>
+
+
+document.getElementById("bookingID").innerHTML =
+localStorage.getItem("bookingID");
+
+
+document.getElementById("name").innerHTML =
+localStorage.getItem("name");
+
+
+document.getElementById("destination").innerHTML =
+localStorage.getItem("destination");
+
+
+document.getElementById("hotel").innerHTML =
+localStorage.getItem("hotel");
+
+
+document.getElementById("transport").innerHTML =
+localStorage.getItem("transport");
+
+
+document.getElementById("amount").innerHTML =
+localStorage.getItem("totalAmount");
+
+
+document.getElementById("status").innerHTML =
+localStorage.getItem("paymentStatus");
+
+
+</script>
+
+
+
+</body>
+
+</html>
